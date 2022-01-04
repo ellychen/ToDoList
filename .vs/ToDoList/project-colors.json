@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "32e1bd0d-a8ec-43e8-aa5f-e55de1c03c32": {
+      "ProjectGuid": "32e1bd0d-a8ec-43e8-aa5f-e55de1c03c32",
+      "DisplayName": "ToDoList",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "其他檔案",
+      "ColorIndex": -1
+    },
+    "1b073d6b-5123-45ec-930b-9b140505df82": {
+      "ProjectGuid": "1b073d6b-5123-45ec-930b-9b140505df82",
+      "DisplayName": "TestToDoList",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
