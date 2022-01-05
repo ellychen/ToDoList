@@ -4,28 +4,146 @@
     ViewData["Title"] = "Home page";
 }
 
+
+
+
 <div class="container-fluid">
-    <!--
-        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-    -->
-    <div>
-        <input type="Text" value="" style="width:100%" placeholder="新增今日的工作" />
-
-    </div>
-    <div class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <div class="form-row " style="padding:8px">
-            <div class="row-cols-1">
-                <input type="checkbox" title="完成" />
-            </div>
-            <div class="row-cols-8">
-                工作內容
-            </div>
-            <div class="d-inline-block" >
-                <button  type="button" >刪除</button>
-               </div>
+    <div class="row">
+        <div class="col">
+            <input type="Text" value="" style="width:100%" placeholder="新增今日的工作" />
         </div>
-
-
+        <div class="col col-lg-1">
+            <a href="#" onclick="btnAddTaskClick(this);"> 新增任務  </a>
+        </div>
     </div>
+    <div class="row">
+        <div class="col">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" id="dataTable" width="100%" cellspacing="0">
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" title="完成" />
+                    <span>新增今日的工作</span>
+                </div>
+                <div class="col col-lg-1">
+                    <a href="#" onclick="btnRemoveTaskClick(this);"> 刪除  </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4" style="display:none" id="divDetail">
+            <div class="row" style="background-color:white">
+                <div class="col">
+                    <span id="NM_SUBJECT" style="font-size:14pt;color:black;font-weight:bold">  </span>   &nbsp;
+                </div>
+                <div class="col-lg-2">
+                    <a href="#" onclick='btnHideDetail();'> 關閉 </a>
+                </div>
+            </div>
+            <div class="row" style="background-color:white;margin-top:10px">
+                <div class="col">
+                    <input type="text" id="txtNewSubSubect" style="width:100%" placeholder="新增子項目" />
+                </div>
+                <div class="col-lg-3">
+                    <a href="#" onclick="btnAddSubTaskClick()"> 新增子項目  </a>
+                </div>
+            </div>
+            <div class="row" style="background-color:white;margin-top:10px">
+                <div class="col" id="tblSubTask">
+                    <!--
+                    <div class="row"> <div class="col"> 子項目1</div>   </div>
+                    <div class="row"> <div class="col"> 子項目2</div>   </div>
+                    -->
+                </div>
+            </div>
+            <div class="row" style="background-color:white;margin-top:10px">
+                <div class="col-4">
+                    <span style="padding-right:20px"> 預定完成時間 </span>
+                </div>
+                <div class="col">
+                    <input type="datetime-local" placeholder="預定完成時間" id="txtPreFinishDate" />
+                </div>
+            </div>
+            <div class="row" style="background-color:white;margin-top:10px">
+                <div class="col-4">
+                    <span style="padding-right:20px"> 完成時間 </span>
+                </div>
+                <div class="col">
+                    <input type="datetime-local" placeholder="完成時間" id="txtFinishDate" />
+                </div>
+            </div>
+            <div class="row" style="background-color:white;margin-top:10px">
+                <div class="col-4">
+                    <span style="padding-right:20px"> 執行時間(分) </span>
+                </div>
+                <div class="col">
+                    <input type="number" placeholder="執行時間(分)" id="txtMinute" />
+                </div>
+            </div>
+            <!--
+            <div class="row" style="background-color:white;margin-top:10px">
+                <div class="col">
+                    <span> 標籤 </span>
 
+                        <span> 11111 , 1111 </span>
+
+                </div>
+            </div>
+            -->
+            <div class="row" style="background-color:white;margin-top:10px">
+                <div class="col"> 執行時間 </div>
+                <div class="col">
+                    <div class="clock"> 00 : 00 </div>
+                </div>
+                <div class="col">
+                    <button type="button" onclick="btnStartWorkClick();" id="btnStartWork"> 開始執行 </button>
+                </div>
+            </div>
+            <div class="row" style="background-color:white;margin-top:20px">
+                <div class="col" style="text-align:center">
+                    <textarea id="txtContent" style="width:99%" rows="10" ></textarea>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div class="row" style="background-color:white;margin-top:20px">
+                <div class="col" style="text-align:center">
+                    <button type="button"> 儲 存  </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+@section head {
+<style>
+    .clock {
+        color: white;
+        font: 2em sans-serif;
+        background: black;
+        margin: 5px;
+        padding: 5px;
+        border: solid gray 2px;
+        border-radius: 10px;
+        width: 160px;
+        text-align: center;
+    }
+
+</style>
+
+
+}
+
+@section script {
+<script src="script/task.js"></script>
+<script src="script/clock.js"></script>
+
+
+
+
+
+}

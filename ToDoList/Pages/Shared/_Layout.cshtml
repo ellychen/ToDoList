@@ -19,13 +19,9 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <style>
-    @RenderSection("Styles" , false)
-    </style>
-    <script>
-    @RenderSection("top_script" , false)
-    </script>
-
+    
+    @RenderSection("head" , false)
+  
 </head>
 
 <body id="page-top">
@@ -49,34 +45,24 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>我的一天</span></a>
+                    <span onclick="GetDayList();">我的一天</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>本週的工作</span></a>
+                    <span onclick="GetWeekList();">本週的工作</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>下週的工作</span></a>
+                    <span  onclick="GetMonthList();">這個月的工作</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>這個月的工作</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>下個月的工作</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>預定計畫</span></a>
+                    <span  onclick="GetAllList();">預定計畫</span></a>
             </li>
 
 
@@ -367,9 +353,7 @@
     <script src="js/sb-admin-2.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-    <script>
-        @RenderSection("scripts" , false)
-    </script>
+    @RenderSection("script" , false)
 </body>
 
 </html>
