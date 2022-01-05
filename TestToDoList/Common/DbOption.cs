@@ -17,7 +17,7 @@ namespace TestToDoList.Common
             {
                 if (_DbContext == null)
                 {
-                    string ConnectionString = "";
+                    string ConnectionString = "{YourConnection}  ";
                     _DbContext = new ToDoList.Operation.DbContext(
                         new DbContextOptionsBuilder().UseSqlServer(ConnectionString).Options);
                 }
