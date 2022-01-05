@@ -17,7 +17,7 @@ namespace TestToDoList.Common
             {
                 if (_DbContext == null)
                 {
-                    string ConnectionString = "Data Source=EllyChen;Initial Catalog=ToDoList;Persist Security Info=True;User ID=sa;Password=gis5200";
+                    string ConnectionString = "";
                     _DbContext = new ToDoList.Operation.DbContext(
                         new DbContextOptionsBuilder().UseSqlServer(ConnectionString).Options);
                 }
